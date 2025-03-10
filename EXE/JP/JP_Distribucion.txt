@@ -1,0 +1,229 @@
+Funcionalidad:
+Este set de juegos de prueba comprueba todas las funcionalidades de las distribuciones: crea, asigna productos y calcula su afinidad dependiendo del algoritmo a usar y tambien las modifica.
+
+Operativa:
+Ejecutar el programa tal y como se indica en el readme.md, y seguir las instrucciones de cada uno de los tests. Pulsar el boton de reiniciar cuando sea necesario.
+
+//JDP 1: Crear una distribucion y calcular con fuerza bruta
+Descripcion:
+Este juego de prueba comprueba la creacion de una distribucion con algunos elementos.
+
+Valores estudiados:
+Caja gris. Se crea una distribucion con algunos productos.
+
+--
+Pulsar boton de crear distribucion
+Seleccionar los productos Pollo, Leche, Cereales, Ternera y Manzana
+En la caja inferior derecha, seleccionar Fuerza bruta
+Pulsar el boton aceptar
+--
+Output esperado:
+Se verá en la pantalla principal la distribucion Pollo - Cereales - Leche - Manzana - Ternera con una afinidad total (indicada en la parte inferior derecha) de 340.
+
+
+
+///JDP 2: Crear una distribución sin ningun producto
+Descripcion:
+Se comprueba que no se pueda crear una distribucion sin ningun producto.
+
+Valores estudiados:
+Caja gris. No se crea ninguna distribucion.
+
+---
+Pulsar botón de crear distribucion
+Botón aceptar
+---
+
+Output esperado:
+No se crea ninguna distribucion y se nos indica que la lista de productos esta vacia.
+
+
+///JDP 3: Crear una distribucion y calcular afinidad con algoritmo de aproximacion
+Descripcion:
+Se crea una distribucion con productos especificos y se ordenan con el algoritmo de aproximacion (Hillclimbing)
+
+Valores estudiados:
+Caja gris. Se crea una distribucion.
+
+---
+Pulsar boton crear distribucion
+Seleccionar los productos Pollo, Leche, Cereales, Ternera y Manzana.
+Seleccionar en el desplegable aproximacion
+Pulsar el boton aceptar
+---
+
+Output esperado:
+Se crea una distribucion con un orden especifico (no uno fijo, ya que es aleatorio) y con un valor de afinidad tambien aleatorio.
+
+
+
+///JDP 4: Crear una distribucion y calcular afinidad con algoritmo greedy
+Descripcion:
+Se crea una distribucion con productos especificos y se ordenan con el algoritmo greedy
+
+Valores estudiados:
+Caja gris. Se crea una distribucion.
+
+---
+Pulsar boton crear distribucion
+Seleccionar los productos Pollo, Leche, Cereales, Ternera y Manzana.
+Seleccionar en el desplegable greedy
+Pulsar el boton aceptar
+---
+
+Output esperado:
+Output esperado: Se crea la distribucion Pollo - Ternera - Cereales - Manzana - Leche con una afinidad total de 332
+
+///JDP 5: Modificar distribucion inexistente
+Descripcion:
+Se comprueba que no se puede modificar una distribucion cuando no la hay.
+
+Valores estudiados:
+Caja gris. No se crea ninguna distribucion.
+
+---
+Pulsar boton modificar distribucion
+---
+
+Output esperado: Se nos indica que no existe distribucion a modificar
+
+
+///JDP 6: Modificar distribucion
+Descripcion:
+Se crea una distribucion nueva, y se intenta cambiar de sitio un producto, eliminar otro y añadir uno nuevo.
+
+Valores estudiados:
+Caja gris. Se crea una distribucion y se aplican modificaciones.
+
+---
+Boton crear distribucion
+Seleccionar los productos Pollo, Leche, Cereales, Ternera y Manzana.
+Seleccionar algoritmo fuerza bruta
+Boton aceptar
+Boton crear distribucion
+Seleccionar los productos Yogur
+Seleccionar algoritmo fuerza bruta
+Boton aceptar
+Boton modificar distribucion
+Seleccionar Pollo
+Introducir 3
+Boton aceptar
+Seleccionar Pollo
+Introducir 1
+Boton aceptar
+Boton Salir
+Boton crear distribucion
+Deseleccionar Yogur
+Seleccionar algoritmo fuerza bruta
+Boton aceptar
+---
+
+Output esperado:
+Se crea primero la distribucion Pollo - Cereales - Leche - Manzana - Ternera con una afinidad total de 340
+Luego se crea la distribucion Pollo - Cereales - Yogur - Leche - Manzana - Ternera con una afinidad de 447
+Despues de mover Pollo la afinidad es 256
+Despues de mover Pollo de nuevo la afinidad es 447 de nuevo
+Finalmente despues de quitar yogur se vuelve a hacer la distribucion inicial con la afinidad de 340
+
+
+///JDP 7: Mover a una posicion invalida
+Descripcion:
+Se intenta mover un producto a una posicion invalida al modificar la distribucion.
+
+Valores estudiados:
+Caja gris. No se mueve ningun producto
+
+---
+Crear distribucion
+Seleccionar Pollo, Sal
+aceptar
+Modificar distribucion
+Seleccionar Pollo
+Introducir 0
+Aceptar
+Seleccionar Pollo
+Introducir 3
+Aceptar
+---
+
+Output esperado:
+El producto Pollo no se mueve de la posicion inicial dado que no existe ni la posicion 0 ni la posicion 3.
+
+
+///JDP 8: Mover a una posicion actual
+Descripcion:
+Se intenta mover un producto a la posicion en la que ya esta.
+
+Valores estudiados:
+Caja gris. No se mueve ningun producto
+
+---
+Crear distribucion
+Seleccionar Pollo, Sal
+aceptar
+Modificar distribucion
+Seleccionar Pollo
+Introducir 1
+Aceptar
+Seleccionar Sal
+Introducir 2
+Aceptar
+---
+
+Output esperado:
+El producto Pollo y Sal no se pueden mover a ninguna de las dos posiciones ya que estan en ellas.
+
+
+///JDP 9: Guardar distribucion
+Descripcion:
+Se comprueba que al guardar la distribucion y reinicializar el sistema, esta sigue existiendo
+
+Valores estudiados:
+Caja gris. Si se ha guardado correctamente, la distribucion deberia seguir existiendo.
+
+---
+Crear distribucion
+Seleccionar Pollo
+Aceptar
+Boton +
+Guardar y Salir
+Ejecutar el sistema de nuevo
+---
+
+Output esperado:
+Cuando se inicie el sistema, Pollo debería seguir en la estanteria con dos estantes.
+
+///JDP 10: Resetear la distribucion
+Descripcion:
+Se comprueba que al resetear el programa la distribucion existente se elimina.
+
+Valores estudiados:
+Caja gris. Se elimina la distribucion creada inicialmente.
+
+---
+Boton crear distribucion
+Seleccionar Pollo
+Seleccionar algoritmo fuerza bruta
+aceptar
+Boton reset
+---
+
+Output esperado:
+Se muestra una distribucion justo despues de crearla pero al resetear el programa esta desaparece.
+
+///JDP 11: Crear distribucion con TODOS los productos
+Descripcion
+Se comprueba que se pueden añadir todos los productos a una distribucion y calcularlos con el algoritmo de Aproximacion.
+
+Valores estudiados:
+Caja gris. Se añaden todos los productos a la distribucion.
+
+---
+Boton crear distribucion
+Seleccionar todos los productos del catalogo inicial
+Seleccionar algoritmo aproximacion
+Boton aceptar
+---
+
+Output esperado:
+Se crea una distribucion con todos los productos y se calcula la afinidad con el algoritmo de aproximacion. La afinidad, al ser calculada con el algoritmo de aproximacion y el orden de los productos cambia cada vez, sera distinta.

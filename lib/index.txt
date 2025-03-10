@@ -1,0 +1,1 @@
+En este directorio se encuentran todas las librerías necesarias para la ejecución del proyecto, las librerías JUnit para los tests unitarios.

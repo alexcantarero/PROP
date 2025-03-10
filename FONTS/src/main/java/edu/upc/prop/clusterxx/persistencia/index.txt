@@ -1,0 +1,7 @@
+La carpeta contiene:
+- La carpeta clases con las clases de persistencia.
+- La carpeta controladores con el controlador de persistencia.
+- La carpeta estanterias con las estanterias actuales de la sesion en .JSON.
+- La carpeta estanteriasIniciales con las estanterias iniciales en .JSON.
+- La carpeta productos con los productos actuales de la sesion en .JSON.
+- La carpeta productosIniciales con los productos iniciales en .JSON.

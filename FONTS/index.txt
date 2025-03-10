@@ -1,0 +1,7 @@
+Esta carpeta contiene:
+- La carpeta src que contiene el código fuente del programa.
+- La carpeta bin donde están los binarios .class de las clases implementadas.
+- La carpeta src:
+    - La carpeta main donde se encuentran los ficheros .java de las clases y controladores, y una carpeta resources con las imágenes utilizadas.
+
+Para ejecutar el programa, sigue los pasos que se indican en el README.md.

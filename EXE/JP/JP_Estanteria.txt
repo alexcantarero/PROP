@@ -1,0 +1,289 @@
+Funcionalidad:
+Este set de juegos de prueba comprueba todas las funcionalidades de la estanteria: crea, elimina, modifica el numero de estantes, y añade una distribucion.
+
+Operativa:
+Ejecutar el programa tal y como se indica en el readme.md, y seguir las instrucciones de cada uno de los tests. Pulsar el boton de reiniciar cuando sea necesario
+
+///JDP 1: Crear una estanteria
+Descripcion:
+Se crea una estanteria vacia.
+
+Valores estudiados:
+Caja gris. Se crea una estanteria con un unico estante.
+
+---
+Boton crear estanteria
+Introducir texto "2"
+Aceptar
+---
+
+Output esperado:
+Se crea la estanteria 2 con un unico estante. Se puede comprobar conforme se ha creado si se visualiza en la barra desplegable del boton Cargar Estanteria.
+
+
+///JDP 2: Crear una estanteria con un nombre ya existente
+Descripcion:
+Se intenta crear una estanteria con un nombre ya existente.
+
+Valores estudiados:
+Caja gris. No se crea ninguna estanteria.
+
+---
+Boton crear estanteria
+Introducir texto "1"
+Aceptar
+---
+
+Output esperado:
+No se crea una estanteria nueva ya que la que se inicializa tiene el nombre 1, entonces, al intentar crear una nueva con el mismo nombre salta un mensaje de error.
+
+
+///JDP 3: Cambiar numero de estantes a 0
+Descripcion:
+Se intenta cambiar el numero de estantes de una estanteria a 0.
+
+Valores estudiados:
+Caja gris. No se cambia el numero de estantes.
+
+---
+Boton -
+---
+
+Output esperado:
+No se reduce el numero de estantes y se nos indica que el numero de estantes debe ser mayor que 0.
+
+
+///JDP 4: Cambiar numero de estantes a 11
+Descripcion:
+Se intenta cambiar el numero de estantes de una estanteria a 11.
+
+Valores estudiados:
+Caja gris. No se cambia el numero de estantes.
+
+---
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+Boton +
+(Boton + x 10 veces)
+---
+
+Output esperado:
+Se aumenta el nombre de estantes a 10 pero al intentar subir a 11 salta un mensaje de error.
+
+
+
+///JDP 5: Cambio de estanterias
+Descripcion:
+Se crea una estanteria, se le añade una distribucion, despues se crea otra estanteria y se carga esta estanteria como actual.
+Despues, se vuelve a cargar la primera estanteria y se comprueba que la distribucion sigue existiendo.
+
+Valores estudiados:
+Caja gris. Se comprueba que se pueden cambiar de estanterias y que las distribuciones se mantienen.
+
+---
+Boton crear distribucion
+Seleccionar Pollo
+Algoritmo fuerza bruta
+aceptar
+Boton crear Estanteria
+Introducir nombre "2"
+aceptar
+Cargar Estanteria
+Seleccionar 2
+Boton crear distribucion
+Seleccionar Queso
+Algoritmo fuerza bruta
+aceptar
+Boton cargar distribucion
+Seleccionar 1
+Aceptar
+---
+
+Output esperado:
+Se crea la distribucion Pollo en la estanteria 1. Se crea la estanteria 2 y se carga como actual. Se vuelve a cargar la estanteria 1 y se comprueba que la distribucion Pollo sigue existiendo.
+
+///JDP 6: Eliminar una estanteria
+Descripcion:
+Se elimina una estanteria.
+
+Valores estudiados:
+Caja gris. Se elimina una estanteria.
+
+---
+Boton crear estanteria
+Introducir "2"
+Aceptar
+Boton Eliminar estanteria
+Seleccionar estanteria 2
+Aceptar
+---
+
+Output esperado:
+Se elimina la estanteria 2, que se habia eliminado previamente.
+
+
+
+///JDP 7: Eliminar estanteria actual
+Descripcion:
+Se intenta eliminar la estanteria actual
+
+Valores estudiados:
+Caja gris. Se intenta eliminar la estanteria actual.
+
+---
+Boton crear estanteria
+Introducir "2"
+Aceptar
+Cargar estanteria
+Seleccionar 2
+Aceptar
+Boton eliminar estanteria
+Seleccionar estanteria 2
+Aceptar
+---
+
+Output esperado:
+No se elimina la estanteria y se muestra un mensaje de error, que no se puede eliminar.
+
+
+///JDP 8: Eliminar estanteria 1 y quedarse con estanteria 2
+Descripcion:
+Se elimina la estanteria inicial y se queda con una estanteria nueva
+
+Valores estudiados:
+Caja gris. Se intenta eliminar la estanteria actual.
+
+---
+Boton crear estanteria
+Introducir "2"
+Aceptar
+Cargar estanteria
+Seleccionar 2
+Aceptar
+Boton eliminar estanteria
+Seleccionar estanteria 1
+Aceptar
+---
+
+Output esperado:
+Se elimina la estanteria 1, y el sistema solo dispondra de la estanteria 2.
+
+///JDP 9: Eliminar estanteria unica
+Descripcion:
+Se intenta eliminar la unica estanteria que existe.
+
+Valores estudiados:
+Caja gris. No se elimina nada.
+
+---
+Boton crear estanteria
+Introducir "2"
+Aceptar
+Cargar estanteria
+Seleccionar 2
+Aceptar
+Boton eliminar estanteria
+Seleccionar estanteria 1
+Aceptar
+Boton eliminar estanteria
+Seleccionar estanteria 2
+Aceptar
+---
+
+Output esperado:
+No se elimina ninguna estanteria ya que 2 es la unica que existe en el sistema despues de los comandos anteriores.
+
+///JDP 10: Crear distribucion y modificar numero de estantes
+Descripcion:
+Se crea una distribucion y se modifican el numero de estantes a 3.
+
+Valores estudiados:
+Caja gris. Se crea una nueva distribucion y se modifican el numero de estantes a 3.
+
+---
+Crear Distribucion
+Seleccionar Pollo, Queso, Sal
+Seleccionar fuerza bruta
+aceptar
+Boton +
+Boton +
+---
+
+Output esperado:
+Se crea una distribucion nueva y se distribuye en los tres estantes:
+Pollo
+Queso
+Sal
+
+
+
+///JDP 11: Crear estanteria y guardarla
+Descripcion:
+Se crea una estanteria nueva, se guardan los cambios y se vuelve a iniciar el sistema.
+
+Valores estudiados:
+Caja gris. Si se guardan los cambios, la estanteria 2 deberia seguir existiendo despues de iniciar el sistema.
+
+---
+Crear estanteria
+Introducir "2"
+aceptar
+Guardar y Salir
+Ejecutar de nuevo el sistema
+Cargar estanteria
+---
+
+Output esperado:
+Cuando se vuelve a iniciar el sistema, la estanteria 2 sigue existiendo, apareciendo en el desplegable de Cargar estanteria.
+
+///JDP 12: Eliminar estanteria inicial y guardar
+Descripcion:
+Se crea una nueva estanteria, se carga y se borra la inicial. Despues se guarda y se comprueba que solo exista la estanteria nueva.
+
+Valores estudiados:
+Caja gris. Si se guardan los cambios, la estanteria 2 deberia ser la unica en el sistema.
+
+---
+Crear estanteria
+Introducir "2"
+aceptar
+Cargar estanteria
+Seleccionar 2
+Borrar estanteria
+Seleccionar 1
+aceptar
+Guardar y Salir
+Ejecutar de nuevo el sistema
+Cargar la estanteria
+---
+
+Output esperado:
+La estanteria 2 es la unica en el sistema y la 1 se ha borrado.
+
+
+///JDP 13: Resetear las estanterias
+Descripcion:
+Se resetea el sistema y todas las estanterias creadas y sus distribuciones se eliminan.
+
+Valores estudiados:
+Caja gris. Se resetea el sistema.
+
+---
+Crear estanteria
+Introducir 2
+Aceptar
+Cargar estanteria
+Seleccionar 2
+Aceptar
+Resetear
+---
+
+Output esperado:
+Se crea la estanteria 2 y despues se resetea el sistema, por lo que 2 desaparece.

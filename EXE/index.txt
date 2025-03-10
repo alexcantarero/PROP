@@ -1,0 +1,3 @@
+Este directorio contiene:
+- El ejecutable del proyecto. Para ejecutarlo, simplemente desde la carpeta raíz del proyecto ejecutar el comando: gradle run o ./gradlew run tal y como se indica en el README.md.
+- Los ficheros .txt de los juegos de prueba.

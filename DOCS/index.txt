@@ -1,0 +1,5 @@
+En esta carpeta contiene
+ - La documentacion en JAVADOC del proyecto.
+ - El diagrama de casos de uso.
+ - La relacion de clases implementadas por cada uno de los integrantes del grupo.
+ - El manual de usuario.

@@ -1,0 +1,291 @@
+Funcionalidad:
+En este conjunto de juegos de pruebas se comprueba el funcionamiento de todas las intrucciones realcionadas con la gestión de productos. Esto incluye la creación, modificación y eliminacion de productos.
+
+Operativa:
+Ejecutar el programa tal y como se indica en el readme.md, y seguir las instrucciones de cada uno de los tests. Pulsar el boton de reiniciar cuando sea necesario
+
+///JDP 1: Crear producto
+Descripcion:
+Este juego de pruebas crea productos.
+
+Valores estudiados:
+Caja gris. Se intenta crear un producto
+---
+Gestionar productos
+Crear producto
+Introducir nombre "A"
+Seleccionar atributo Carne
+Aceptar
+---
+
+Output esperado:
+El producto A se crea con éxito y aparece en la lista de productos.
+
+///JDP 2: Crear producto con nombre ya existente
+Descripcion:
+Se intenta crear un producto con un nombre que ya tiene otro producto.
+
+Valores estudiados:
+Caja gris. No se debe modificar nada.
+
+---
+Gestionar productos
+Crear producto
+Introducir nombre "Pollo"
+Seleccionar atributo Carne
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite crear un producto con un nombre ya existente.
+
+///JDP 3: Crear producto sin nombre
+Descripcion:
+Se intenta crear un producto sin nombre.
+
+Valores estudiados:
+Caja gris. No se debe crear nada.
+
+---
+Gestionar productos
+Crear producto
+Seleccionar atributo Carne
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite crear un producto sin nombre.
+
+
+
+///JDP 4: Crear producto sin atributos o mas de 4
+Descripcion:
+Se intenta crear un producto con un nombre de atributos no permitido
+
+Valores estudiados:
+Caja gris. No se debe crear nada.
+
+---
+Gestionar productos
+Crear producto
+Introducir nombre "A"
+Aceptar
+Seleccionar atributos Carne, Pescado, Fruta, Verdura&Hortaliza
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite crear un producto ni sin atributos ni con mas de 4.
+
+///JDP 5: Modificar producto
+Descripcion:
+Se intenta modificar un producto ya existente.
+
+Valores estudiados:
+Caja gris. Se modifica un producto.
+
+---
+Gestionar productos
+Modificar producto
+Seleccionar Pollo
+Introducir nombre "A"
+Seleccionar atributo Pescado
+Aceptar
+---
+
+Output esperado:
+Se modifica el producto Pollo: ahora se llama A y tiene un atributo extra: Pescado
+
+///JDP 6: Modificar producto con nombre ya existente
+Descripcion:
+Se intenta modificar un producto a un nombre que ya tiene otro producto.
+
+Valores estudiados:
+Caja gris. No se debe modificar nada.
+
+---
+Gestionar productos
+Seleccionar Pollo
+Modificar producto
+Introducir nombre "Sal"
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite modificar un producto a un nombre ya existente.
+
+
+
+///JDP 7: Modificar nombre producto vacio
+Descripcion:
+Se intenta modificar un producto a un nombre vacio.
+
+Valores estudiados:
+Caja gris. No se debe modificar nada.
+
+---
+Gestionar productos
+Seleccionar Pollo
+Modificar producto
+Borrar nombre
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite modificar un producto a un nombre vacio.
+
+
+///JDP 8: Modificar producto sin atributos o mas de 4
+Descripcion:
+Se intenta modificar un producto con un nombre de atributos no permitido
+
+Valores estudiados:
+Caja gris. No se debe modificar nada.
+
+---
+Gestionar productos
+Seleccionar Pollo
+Modificar producto
+Seleccionar atributos Carne, Pescado, Fruta, Verdura&Hortaliza
+Aceptar
+Deselccionar atributos
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite modificar un producto ni sin atributos ni con mas de 4.
+
+
+///JDP 9: Modificar producto mientras esta en distribucion
+Descripcion:
+Se intenta modificar un producto mientras esta en distribucion
+
+Valores estudiados:
+Caja gris. No se debe modificar nada.
+
+---
+Crear distribucion
+Seleccionar Pollo, Sal
+Aceptar
+Modificar producto
+Seleccionar Pollo
+Introducir nombre "Poll"
+Aceptar
+Seleccionar atributo Pescado
+Aceptar
+---
+
+Output esperado:
+Salta un mensaje de error que no permite modificar un producto mientras esta en distribucion.
+
+
+///JDP 10: Eliminar producto
+Descripcion:
+Se elimina un producto
+
+Valores estudiados:
+Caja gris. Se elimina un producto.
+
+---
+Gestionar productos
+Seleccionar el Pollo
+Eliminar producto
+Sí
+---
+
+Output esperado:
+El producto Pollo se elimina con éxito y desaparece de la lista de productos.
+
+
+///JDP 11: Eliminar unico producto
+Descripcion:
+Se intenta eliminar el unico producto que queda
+
+Valores estudiados:
+Caja gris. No se debe eliminar nada.
+
+---
+Gestionar productos
+Seleccionar todos los productos uno a uno y eliminarlos hasta que quede uno
+Seleccionar el unico producto que queda
+Eliminar producto
+Sí
+---
+
+Output esperado:
+Salta un mensaje de error que no permite eliminar el unico producto que queda.
+
+///JDP 12: Eliminar producto en distribucion
+Descripcion:
+Se intenta eliminar un producto que esta en una distribucion
+
+Valores estudiados:
+Caja gris. No se debe eliminar nada.
+
+---
+Crear distribucion
+Seleccionar Pollo, Sal
+Aceptar
+Gestionar productos
+Seleccionar Pollo
+Eliminar producto
+Sí
+---
+
+Output esperado:
+Salta un mensaje de error que no permite eliminar un producto en distribucion.
+
+
+///JDP 13: Guardar productos
+Descripcion:
+Se guardan los productos despues de modificarlos
+
+Valores estudiados:
+Caja gris. Se guardan los productos.
+
+---
+Gestionar productos
+Seleccionar Pollo
+Modificar producto
+Introducir nombre "A"
+Seleccionar atributo Pescado
+Aceptar
+Crear producto
+Introducir nombre "B"
+Seleccionar atributo Carne
+Aceptar
+Atras
+Guardar y salir
+Ejecutar de nuevo el programa
+Gestionar Productos
+---
+
+Output esperado:
+Los productos se guardan con éxito, tanto A como B siguen apareciendo en la lista de productos.
+
+
+///JDP 14: Resetear productos
+
+Descripcion:
+Se resetean los productos
+
+Valores estudiados:
+Caja gris. Se resetean todas las modificaciones realizadas y se vuelve al punto inicial.
+
+---
+Gestionar productos
+Seleccionar Pollo
+Modificar producto
+Introducir nombre "A"
+Seleccionar atributo Pescado
+Aceptar
+Seleccionar Yogur
+Eliminar producto
+Si
+Atras
+Resetear
+Gestionar Productos
+---
+
+Output esperado:
+Los productos se resetean con éxito, se vuelve a la lista de productos inicial con sus caracteristicas iniciales.

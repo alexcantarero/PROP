@@ -1,0 +1,6 @@
+La carpeta contiene:
+- La carpeta Controladores con el controlador de presentación
+- La carpeta Vistas con las vistas usadas en la presentación
+- El fichero Main desde el cual se ejecuta el programa.
+
+Para ejecutar el programa, sigue los pasos que se indican en el README.md.
